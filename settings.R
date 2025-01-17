@@ -73,7 +73,7 @@ soil_lookup_path <- paste0(out_path, buildr_data, 'Soil_SWAT_cod.csv')
 soil_data_path   <- paste0(out_path, buildr_data, 'usersoil_lrew.csv')
 
 ## Land input vector layer path
-land_path <- paste0(out_path, buildr_data, 'land.shp')
+land_path <- paste0(out_path, buildr_data, 'land_new.shp')
 
 ## Channel input vector layer path 
 channel_path <- paste0(out_path, buildr_data, 'channel.shp')
