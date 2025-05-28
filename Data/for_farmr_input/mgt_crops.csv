@@ -50,7 +50,6 @@ alfa,3,20,3,30,tillage,landlevl,NA,NA
 alfa,4,1,4,10,plant,lupn,NA,NA
 alfa,8,20,8,30,harvest_only,lupn,grain,NA
 alfa,8,20,8,30,kill_only,lupn,NA,NA
-alfa,8,31,9,10,tillage,landlevl,NA,NA
 fpea,NA,NA,NA,NA,skip,NA,NA,NA
 fpea,3,1,3,15,tillage,landlevl,NA,NA
 fpea,3,15,4,1,fertilizer,elem_n,broadcast,60
@@ -69,8 +68,8 @@ fesc,NA,NA,NA,NA,skip,NA,NA,NA
 fesc,3,10,3,20,plant,fesc,NA,NA
 fesc,6,15,6,30,harvest_only,fesc,hay_cut_low,NA
 fesc,9,1,9,15,harvest_only,fesc,hay_cut_low,NA
-fesc,10,1,10,15,kill_only,fesc,NA,NA
+fesc,9,1,9,15,kill_only,fesc,NA,NA
 berm,NA,NA,NA,NA,skip,NA,NA,NA
 berm,3,10,3,20,plant,lmix,NA,NA
-berm,9,15,9,30,tillage,fallplow,NA,NA
-berm,9,15,9,30,kill_only,lmix,NA,NA
+berm,9,1,9,15,tillage,fallplow,NA,NA
+berm,9,16,10,1,kill_only,lmix,NA,NA
