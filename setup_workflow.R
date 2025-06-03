@@ -42,7 +42,7 @@ dir.create(res_path, recursive = TRUE)
 source(paste0(lib_path, '/buildr_script/swatbuildr.R'), chdir=TRUE)
 
 ##------------------------------------------------------------------------------
-## 3) Adding weather and atmospheric deposition data to model setup
+## 3) Adding weather data to model setup
 ##------------------------------------------------------------------------------
 
 ## Description of functions and how data example was prepared is on this webpage
@@ -59,21 +59,18 @@ if(length(db_path)>1){
   zip(paste0(res_path,"/db_backup.zip"), db_path)
 }
 
-## Loading weather data and downloading atmospheric deposition
+## Loading weather data 
 # met <- load_template(weather_path, epsg_code)
 # met_int <- interpolate(met, "Data/for_buildr/basin.shp", 
 #                        "Data/for_buildr/DEM.tif", 5000) 
 
 met <- readRDS(weather_path)
 
-df <- get_atmo_dep(basin_path)
-
 ## Calculating weather generator statistics
 wgn <- prepare_wgn(met)
 
 ## Adding weather and atmospheric deposition data into setup
 add_weather(db_path, met, wgn)
-add_atmo_dep(df, db_path, t_ext = "annual")
 
 ##------------------------------------------------------------------------------
 ## 4) Adding small modification to model setup .sqlite 
@@ -117,7 +114,7 @@ file.copy("plants.plt", dir_path)
 link_aquifer_channels(dir_path)
 
 ##------------------------------------------------------------------------------
-## 7) Adding point sources data
+## 7) Adding point sources and atmospheric deposition data 
 ##------------------------------------------------------------------------------
 
 ## Description of how data should be prepared (template) is on this webpage
@@ -127,6 +124,11 @@ link_aquifer_channels(dir_path)
 pnt_data <- load_template(temp_path)
 ## Add to the model
 prepare_ps(pnt_data, dir_path, constant = TRUE)
+
+##Downloading atmo deposition data https://biopsichas.github.io/SWATprepR/reference/get_atmo_dep.html
+df <- get_atmo_dep(basin_path)
+## Add atmo deposition https://biopsichas.github.io/SWATprepR/reference/add_atmo_dep.html
+add_atmo_dep(df, dir_path, t_ext = "annual")
 
 ##------------------------------------------------------------------------------
 ## 8) Running SWATfamR'er input preparation script
