@@ -8,7 +8,7 @@ swat_exe <- "Rev_60_5_7_64rel.exe"
 ## Folder names
 
 ## Folder for saving results
-res_path <- "Temp"
+res_path <- "Temp2"
 ## Data folder
 data_path <- "Data"
 ## Scripts folder
@@ -58,10 +58,6 @@ buildr_data <- paste0(data_path, "/for_buildr/")
 # Project path (where output files are saved) ----------------------
 project_path <- paste0(out_path, res_path, '/buildr_project')
 project_name <- 'slupia'
-
-# Path of the TxtInOut folder (project folder where the SWAT+ text
-# files are written with the SWAT+Editor)
-txt_path <- paste0(out_path, res_path, '/buildr_project/cs4_project/txt')
 
 # Input data -------------------------------------------------------
 ## DEM raster layer path
